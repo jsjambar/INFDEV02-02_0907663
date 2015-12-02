@@ -19,7 +19,6 @@ class Tile:
     self.Visited = False
     self.Offset = offset
 
-
     self.Traverseable = True
     self.Park = False
 
