@@ -28,6 +28,9 @@
     <Compile Include="Car.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="lambda_functions.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Node.py">
       <SubType>Code</SubType>
     </Compile>
