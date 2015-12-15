@@ -6,7 +6,6 @@ import random
 from Tile import *
 from Node import *
 from Car  import *
-from lambda_functions import *
 
 
 pygame.init()

@@ -1,4 +1,6 @@
-from Node import *
+﻿from Node import *
+from Car import *
+
 def fold(list, func, base):
     if(list.IsEmpty):
         return base
@@ -10,8 +12,8 @@ def filter(list, p):
     if(list.IsEmpty):
         return Empty
     else:
-        if p(list.Head):
-            return Node(list.Head, list.Tail)
+        if p(list.Value):
+            return Node(list.Value, list.Tail)
         else:
             return filter(list.Tail, p)
 
@@ -19,4 +21,4 @@ def map(list, func):
     if(list.IsEmpty):
         return Empty
     else:
-        return Node(func(list.Head), map(list.Tail, func))
+        return Node(func(list.Value), map(list.Tail, func))

@@ -1,7 +1,7 @@
 ﻿import pygame
-import random
 from Car import *
 from Node import *
+from random import *
 
 NotTraverseable = 0
 Park = 1
@@ -109,8 +109,8 @@ def build_square_matrix (dimension, offset):
   prev_node = None
   for row in range(dimension):    
     for column in range(dimension):
-      if (random.uniform(0, 1) > 0.75) and row > 0 and column > 0:
-        if (random.uniform(0, 1) > 0.75):
+      if (uniform(0, 1) > 0.75) and row > 0 and column > 0:
+        if (uniform(0, 1) > 0.75):
           properties = Node(Park, Empty)
           node = Tile((column, row), "Content\park.png", offset, properties)
         else:
