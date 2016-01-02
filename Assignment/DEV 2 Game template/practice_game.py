@@ -28,14 +28,14 @@ counter = 0
 car_list = Node(Car(board), Empty)
 
 def Update(cars):
-   
+
   cars = filter(cars, lambda car: not isParked(car))
   cars = map(cars, lambda car: Update_car(car))
 
  
   # If you get a non-decimal number if you divide by 12, we add a new node with the car node as value and list as tail.
   carIntGen = randint(0,1337)
-  if(carIntGen % 12 == 0):
+  if(carIntGen % 99 == 0):
       cars = Node(Car(board), cars)
       print('New car created.')
 

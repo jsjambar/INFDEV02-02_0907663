@@ -25,16 +25,19 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Boat.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Car.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="lambda_functions.py">
+    <Compile Include="Common.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Lambda_func.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Node.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="practice_game.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Tile.py">
