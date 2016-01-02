@@ -43,7 +43,7 @@ def Update(cars):
           # While the newLoc variable is FALSE (which we defined above), we do the following:
           while(newLoc == False):
               # We place a random integer between 1 and 4 in the randomInt variable
-              randomInt = random.randint(1, 4)
+              randomInt = randint(1, 4)
               # We check if the randomInt value is equal to the one we defined, the location of the next title is part of the road AND
               # we check if we can travel there (there's no building)
               # 1 = Right, 2 = Left, 3 = Up, 4 = Down.
@@ -68,7 +68,7 @@ def Update(cars):
 
        
       # If you get a non-decimal number if you divide by 5, we add a new node with the car node as value and list as tail.
-      carIntGen = random.randint(0,1337)
+      carIntGen = randint(0,1337)
       if(carIntGen % 12 == 0):
         newLocatedCars = Node(Car(board), newLocatedCars)
         print('New car created.')
