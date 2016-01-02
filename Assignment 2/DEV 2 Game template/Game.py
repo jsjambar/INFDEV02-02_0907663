@@ -50,10 +50,10 @@ def Main(cars, boats, offset, screen):
       _board.Value.Draw(screen, True)
       _board = _board.Tail
 
-    #cars = updateCars(cars, entry_road.Value, car_texture)
-    #draw_cars(cars, offset, screen)
-
+    cars = updateCars(cars, entry_road.Value, car_texture)
     boats = updateBoats(boats, entry_rivers.Value, boat_texture)
+    
+    draw_cars(cars, offset, screen)
     draw_boats(boats, offset, screen)
     
     pygame.display.flip()
