@@ -25,17 +25,25 @@ car_list = Empty
 
 counter = 0
 # A loop so we can add 3 cars to our list.
-car_list = Node(Car(board), Empty)
+car_list = Node(Car(board), Node(Car(board), Empty))
 
 def Update(cars):
+  newCars = Empty
+  #cars = filter(cars, lambda car: not isParked(car))
+  while(cars.IsEmpty == False):
+      if(cars.Value.Board.Park == False):
+          newCars = Node(Car(cars.Value.Board), newCars)
+      else:
+          print("Car has entered a garage.")
+      cars = cars.Tail
 
-  cars = filter(cars, lambda car: not isParked(car))
+  cars = newCars
   cars = map(cars, lambda car: Update_car(car))
 
  
   # If you get a non-decimal number if you divide by 12, we add a new node with the car node as value and list as tail.
   carIntGen = randint(0,1337)
-  if(carIntGen % 99 == 0):
+  if(carIntGen % 100 == 0):
       cars = Node(Car(board), cars)
       print('New car created.')
 
