@@ -22,12 +22,23 @@ car_texture = pygame.image.load("Content/car.png").convert_alpha()
 
 car_list = Empty
 boat_list = Empty
-
+print(entry_road)
+asdf
 counter = 0
 while counter < 3:
     car_list = Node(Car(entry_road.Value, car_texture, False), car_list)
     boat_list = Node(Boat(entry_rivers.Value, boat_texture, False), boat_list)
     counter+=1
+
+def updateEntities(entities):   
+    entities = filter(entities, lambda e: not e.canRemove())
+    entities = map(entities, lambda e: e.Update())
+    return entities
+
+def drawEntities(entities):   
+    entities = filter(entities, lambda e: not e.canRemove())
+    entities = map(entities, lambda e: e.Update())
+    return entities
 
 def Main(cars, boats, offset, screen):
   start = time.time()
@@ -50,11 +61,8 @@ def Main(cars, boats, offset, screen):
       _board.Value.Draw(screen, True)
       _board = _board.Tail
 
-    cars = updateCars(cars, entry_road.Value, car_texture)
-    boats = updateBoats(boats, entry_rivers.Value, boat_texture)
-    
-    draw_cars(cars, offset, screen)
-    draw_boats(boats, offset, screen)
+    entities = updateEntities(entities)
+    drawEntities(entities, offset, screen)
     
     pygame.display.flip()
     time.sleep(0.2)

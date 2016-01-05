@@ -14,17 +14,16 @@ class Car:
         self.Texture = texture
         self.CanRemove = canremove
 
+def canRemove(car):
+    if(car.CanRemove == False):
+        return car
+    else:
+        return False
+
 def updateCars(cars, entry_tile, texture):   
 
     newCars = Empty
-
-    while(cars.IsEmpty == False):
-        if(cars.Value.CanRemove == False):
-            newCars = Node(Car(cars.Value.Board, cars.Value.Texture, False), newCars)
-        else:
-            print("Car has entered a garage.")
-        cars = cars.Tail
-
+    newCars = filter(cars, lambda car: canRemove(car))
     cars = map(newCars, lambda car: Update_car(car))
 
     carIntGen = randint(0,1337)
@@ -70,4 +69,4 @@ def draw_cars(cars, offset, screen):
                                 _width + cars.Value.Board.Position.Y * offset))
         # To prevent from going through the same node and to continue with the next element.
         cars = cars.Tail
-                        
+                   
